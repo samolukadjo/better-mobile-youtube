@@ -1,6 +1,6 @@
 
 // show extension is loaded
-console.log("[Better Mobile Youtube] Better Mobile Youtube has been Loaded!");
+console.log('[Better Mobile Youtube] Better Mobile Youtube has been Loaded!');
 
 let currentURL = window.location.href.replace(/\#.*/, '');
 
@@ -38,7 +38,7 @@ function load_custom_playback_speed() {
         if (result.bmy_playback_speed == null || result.bmy_playback_speed == undefined) {
             playbackSpeedDefault = 1;
             data = playbackSpeedDefault;
-            console.log("[Better Mobile Youtube] Default Playbackspeed 1 is used.")
+            console.log('[Better Mobile Youtube] Default Playbackspeed 1 is used.')
 
         } else {
             data = Number(result.bmy_playback_speed);
@@ -71,7 +71,7 @@ function on_playback_speed_changed() {
             // Add an event listener for the 'change' event
             playerSpeedDropdown.addEventListener('change', function (event) {
 
-                console.log('Detected playback speed changed');
+                console.log('[Better Mobile Youtube] Detected playback speed changed');
 
                 data = event.target.value;
 
@@ -85,10 +85,10 @@ function on_playback_speed_changed() {
             });
 
         } else {
-            console.error('Element with tag "select" not found inside player-speed-settings');
+            console.error('[Better Mobile Youtube] Element with tag "select" not found inside player-speed-settings');
         }
     } else {
-        console.error('Element with class "player-speed-settings" not found');
+        console.error('[Better Mobile Youtube] Element with class "player-speed-settings" not found');
     }
 
 
@@ -98,7 +98,7 @@ function on_playback_speed_changed() {
 
 function on_player_settings_clicked() {
 
-    console.log("[Better Mobile Youtube] Player settings Watcher, ON!");
+    console.log('[Better Mobile Youtube] Player settings Watcher, ON!');
 
     // Get the element with the specified class
     const button = document.querySelector('.player-settings-icon');
@@ -120,7 +120,7 @@ function on_video_played() {
     // Assuming 'videoElement' is a reference to the <video> element
     videoElement = document.querySelector('.html5-main-video');
     videoElement.addEventListener("play", (event) => {
-        console.log("[Better Mobile Youtube] Player Started");
+        console.log('[Better Mobile Youtube] Player Started');
 
         load_custom_playback_speed();
 
@@ -139,16 +139,16 @@ function checkIfSettingsBtnExist() {
 
 
 function loop_to_check_player_visibility() {
-    console.log("[Better Mobile Youtube] checking if player is visible");
+    console.log('[Better Mobile Youtube] checking if player is visible');
     videoElement = document.querySelector('.html5-main-video');
 
     if (videoElement) {
         if (videoElement.checkVisibility()) {
-            console.log("[Better Mobile Youtube] Player is visible");
+            console.log('[Better Mobile Youtube] Player is visible');
             on_video_played();
         } else {
             setTimeout(loop_to_check_player_visibility, 150);
-            console.log("[Better Mobile Youtube] Player is not visible");
+            console.log('[Better Mobile Youtube] Player is not visible');
         }
     } else {
         setTimeout(loop_to_check_player_visibility, 150);
@@ -160,7 +160,7 @@ function loop_to_check_player_visibility() {
 function noticeWhenWebpageChanged() {
     window.addEventListener('popstate', function (event) {
         if (window.location.href.replace(/\#.*/, '') == currentURL) {
-            console.log("Url the same");
+            console.log('[Better Mobile Youtube] Url the same');
         } else {
             currentURL = window.location.href.replace(/\#.*/, '');
             loop_to_check_player_visibility();
@@ -171,12 +171,12 @@ function noticeWhenWebpageChanged() {
 
 
 function on_yt_logo_clicked() {
-    console.log("[Better Mobile Youtube] ytl-listner");
+    console.log('[Better Mobile Youtube] ytl-listner');
     youtube_logo = document.getElementsByClassName('mobile-topbar-header-endpoint');
     youtube_logo[0].addEventListener("click", function (event) {
         // Get the href attribute of the clicked link
-        const yt_href = "https://m.youtube.com/";
-        console.log("[Better Mobile Youtube] ytl clicked");
+        const yt_href = 'https://m.youtube.com/';
+        console.log('[Better Mobile Youtube] ytl clicked');
 
         // Navigate to the clicked link
         window.location.href = yt_href;
@@ -199,7 +199,7 @@ function checkIfPageElementsLoaded() {
 
 // Runs all the extention functions
 function run_extension_functions() {
-    console.log("[Better Mobile Youtube] Extension Functions now running");
+    console.log('[Better Mobile Youtube] Extension Functions now running');
 
 
     setTimeout(on_yt_logo_clicked, 200);
