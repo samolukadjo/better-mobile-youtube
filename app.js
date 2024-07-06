@@ -126,7 +126,7 @@ function on_video_played() {
         load_custom_playback_speed();
 
     });
-
+    console.log('[Better Mobile Youtube] Listening for player start');
 
 }
 
