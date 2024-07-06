@@ -30,6 +30,7 @@ function autoplay_video() {
 
 function load_custom_playback_speed() {
 
+    console.log('[Better Mobile Youtube] Attempting to load custom playback speed')
     // Assuming 'videoElement' is a reference to the <video> element
     videoElement = document.querySelector('.html5-main-video');
 
@@ -62,8 +63,8 @@ function on_playback_speed_changed() {
 
     // Ensure the element exists
     if (playerSpeedSettings) {
-        // Find the child element with the tag name 'select'    
-        const playerSpeedDropdown = playerSpeedSettings.querySelector('select');
+    // Find the child element with the tag name 'select'    
+    const playerSpeedDropdown = playerSpeedSettings.querySelector('select');
 
         // Ensure the child element exists
         if (playerSpeedDropdown) {
@@ -118,7 +119,7 @@ function on_player_settings_clicked() {
 
 function on_video_played() {
     // Assuming 'videoElement' is a reference to the <video> element
-    videoElement = document.querySelector('.html5-main-video');
+    const videoElement = document.querySelector('.html5-main-video');
     videoElement.addEventListener("play", (event) => {
         console.log('[Better Mobile Youtube] Player Started');
 
