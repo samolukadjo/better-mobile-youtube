@@ -2,7 +2,7 @@
     "name": "better-mobile-youtube",
     "version": "0.0.6",
     "manifest_version": 2,
-    "description": "Better mobile Youtube aims to provide better feature for mobile youtube on firefox ",
+    "description": "Better Mobile Youtube aims to improve the mobile youtube expirience on firefox.",
     "icons": {
         "16": "icon.png",
         "128": "icon.png"

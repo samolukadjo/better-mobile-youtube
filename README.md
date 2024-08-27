@@ -8,7 +8,7 @@ The extension is currently in the experimental stage so you may find bugs that s
 At the moment there are no settings available for users to enable or disable features, all features are enabled.
 
 ## Installation Instructions
-The extension can still be installed on Firefox for Android by visting the extension page and then using the "Add to Firefox" button.
+The extension can be installed on Firefox for Android by visting the extension page and then using the "Add to Firefox" button.
 
 To install extension from addons.mozilla.org follow this link: [https://addons.mozilla.org/en-US/firefox/addon/better-mobile-youtube/](https://addons.mozilla.org/en-US/firefox/addon/better-mobile-youtube/) 
 
